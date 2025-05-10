@@ -2,10 +2,11 @@
 theme = "catppuccin_mocha"
 
 [editor]
-mouse        = true
-auto-save    = true
-cursorline   = true
-bufferline   = "always"
+mouse                 = true
+auto-save             = true
+cursorline            = true
+bufferline            = "always"
+clipboard-provider    = "pasteboard"
 
 [editor.cursor-shape]
 insert = "bar"
