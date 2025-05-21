@@ -18,7 +18,7 @@ final_space = true
   newline = true
   
   [[blocks.segments]]
-    type       = 'ssh'
+    type       = 'session'
     template   = '{{ if .SSHSession }} {{ .HostName }}{{ end }}'
     foreground = 'black'
     background = 'transparent'
