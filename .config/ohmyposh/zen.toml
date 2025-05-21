@@ -16,6 +16,18 @@ final_space = true
   type = 'prompt'
   alignment = 'left'
   newline = true
+  
+  [[blocks.segments]]
+    type       = 'ssh'
+    template   = '{{ if .SSHSession }} {{ .HostName }}{{ end }}'
+    foreground = 'black'
+    background = 'transparent'
+    style      = 'plain'
+    
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
 
   [[blocks.segments]]
     template = '{{ .Path }}'
@@ -30,7 +42,7 @@ final_space = true
 
   [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-    foreground = 'p:grey'
+    foreground = 'black'
     background = 'transparent'
     type = 'git'
     style = 'plain'
