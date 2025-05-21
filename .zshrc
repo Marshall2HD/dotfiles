@@ -2,9 +2,9 @@ export PATH="$PATH:$HOME/.local/bin"
 #export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 # Nvim as Sudo Editor:
-export VISUAL="nvim"
-export EDITOR="nvim"
-export SUDO_EDITOR="nvim"
+export VISUAL="hx"
+export EDITOR="hx"
+export SUDO_EDITOR="hx"
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
@@ -101,3 +101,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 #Device Specific Extras
 [[ -f "$HOME/.zshrc_extras" ]] && source "$HOME/.zshrc_extras"
+
+
+##Uses 1Password SSH Agent on MacOS otherwise normal config
+if [[ "$OSTYPE" == darwin* ]]; then
+  export GIT_CONFIG_GLOBAL="$HOME/.gitconfig.1password"
+else
+  export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
+fi
