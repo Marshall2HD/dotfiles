@@ -41,7 +41,7 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
-source <(docker completion zsh)
+eval "$(podman completion zsh)"
 
 zinit cdreplay -q
 
@@ -89,7 +89,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # Initializes oh-my-posh except on apple terminal
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 
-  eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin_macchiato.omp.json')"
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 fi
 
 

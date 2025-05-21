@@ -1,5 +1,5 @@
-#theme = "automata"
-theme = "catppuccin_mocha"
+theme = "automata"
+#theme = "catppuccin_mocha"
 
 [editor]
 mouse                 = true
