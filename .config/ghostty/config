@@ -10,7 +10,7 @@ keybind = ctrl+shift+right=goto_split:right
 keybind = ctrl+shift+up=goto_split:top
 keybind = ctrl+shift+down=goto_split:bottom
 
-font-family = "CommitMonoAutomata,OperatorMonoLig Nerd Font"
+font-family = "CommitMonoAutomata"
 font-size = 14
 font-thicken = false
 
@@ -21,6 +21,10 @@ background-blur-radius = 0
 unfocused-split-opacity = 0.95
 window-padding-x=2,2
 window-padding-y=2,2
+
+# Window Size (Mac/Linux Only)
+window-height = 30
+window-width = 120
 
 cursor-style = block_hollow
 

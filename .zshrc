@@ -41,7 +41,9 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
-eval "$(podman completion zsh)"
+if [[ "$OSTYPE" != darwin* ]]; then
+  eval "$(podman completion zsh)"
+fi
 
 zinit cdreplay -q
 
@@ -76,6 +78,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias ~~='!!'
+alias pod-pull='podman images --format '{{.Repository}}:{{.Tag}}' | xargs -L1 sudo podman pull'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -109,3 +113,17 @@ if [[ "$OSTYPE" == darwin* ]]; then
 else
   export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
 fi
+
+#Nix something
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
+# stops nix from crying about shit
+if typeset -f command_not_found_handler >/dev/null; then
+  unset -f command_not_found_handler
+fi
+
+nrs() {
+  sudo nixos-rebuild switch --flake .#nyx-0 "$@"
+}
