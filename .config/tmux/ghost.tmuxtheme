@@ -1,0 +1,52 @@
+# vim:set ft=tmux:
+
+# --> Custom Theme
+
+# Background and foreground
+set -ogq @thm_bg "#DAD4BA"         # bright-white
+set -ogq @thm_fg "#2B2A2A"         # black
+
+# Core palette
+set -ogq @thm_black "#2B2A2A"
+set -ogq @thm_light_black "#402F27"
+set -ogq @thm_red "#662A37"
+set -ogq @thm_light_red "#992C34"
+set -ogq @thm_green "#244E33"
+set -ogq @thm_light_green "#53825A"
+set -ogq @thm_yellow "#B67F21"
+set -ogq @thm_light_yellow "#ADAD39"
+set -ogq @thm_blue "#3A4A67"
+set -ogq @thm_light_blue "#5B89A7"
+set -ogq @thm_purple "#674C8B"
+set -ogq @thm_light_purple "#954C5F"
+set -ogq @thm_aqua "#457A7A"
+set -ogq @thm_light_aqua "#328E8F"
+set -ogq @thm_white "#CDC8B0"
+set -ogq @thm_light_white "#EBE6D2"
+set -ogq @thm_bright_white "#DAD4BA"
+set -ogq @thm_whitespace "#918E82"
+set -ogq @thm_cursor_line "#D6A45D"
+
+# Semantic mapping (optional, adjust as needed)
+set -ogq @thm_tag "#ADAD39"                # light-yellow
+set -ogq @thm_attribute "#5B89A7"          # light-blue
+set -ogq @thm_comment "#918E82"           # whitespace
+set -ogq @thm_constant "#53825A"          # light-green
+set -ogq @thm_numeric "#B67F21"           # yellow
+set -ogq @thm_constructor "#5B89A7"       # light-blue
+set -ogq @thm_function "#53825A"          # light-green
+set -ogq @thm_keyword "#328E8F"           # light-aqua
+set -ogq @thm_control "#992C34"           # light-red
+set -ogq @thm_storage "#3A4A67"           # blue
+set -ogq @thm_operator "#662A37"          # red
+set -ogq @thm_string "#53825A"            # light-green
+set -ogq @thm_type "#674C8B"              # purple
+set -ogq @thm_variable "#954C5F"          # light-purple
+
+# UI elements
+set -ogq @thm_ui_bg "#DAD4BA"
+set -ogq @thm_ui_fg "#2B2A2A"
+set -ogq @thm_ui_highlight "#EBE6D2"
+set -ogq @thm_ui_selection "#244E33"
+set -ogq @thm_ui_statusline_fg "#EBE6D2"
+set -ogq @thm_ui_statusline_bg "#992C34"
