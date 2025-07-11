@@ -14,6 +14,9 @@ font-family = "CommitMonoAutomata"
 font-size = 14
 font-thicken = false
 
+clipboard-read = "allow"
+clipboard-write = "allow"
+
 macos-titlebar-style = hidden
 window-decoration = false
 background-opacity = 0.80

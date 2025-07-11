@@ -79,7 +79,7 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias ~~='!!'
-alias pod-pull='podman images --format '{{.Repository}}:{{.Tag}}' | xargs -L1 sudo podman pull'
+alias pod-pull='sudo podman images --format '{{.Repository}}:{{.Tag}}' | xargs -L1 sudo podman pull'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -127,3 +127,11 @@ fi
 nrs() {
   sudo nixos-rebuild switch --flake .#nyx-0 "$@"
 }
+eval "$(/Users/marsh/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/agent.sock"
+
+#Automatically start tmux if not already in a session
+if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s default
+fi
