@@ -10,8 +10,7 @@ keybind = ctrl+shift+right=goto_split:right
 keybind = ctrl+shift+up=goto_split:top
 keybind = ctrl+shift+down=goto_split:bottom
 
-font-family = "Iosevka Term"
-wdth = 600
+font-family = "Iosevka Term Extended"
 font-size = 14
 font-thicken = false
 
