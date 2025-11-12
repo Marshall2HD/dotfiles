@@ -8,6 +8,11 @@ set -gx PY_COLORS true
 set -gx GPG_TTY (tty)
 set -gx LANG en_US.utf-8
 
+# Fish behavior
+set -U fish_case_insensitive 1
+# Zoxide FZF preview
+set -Ux _ZO_FZF_OPTS "--preview 'ls --color=always {}''"
+
 fish_add_path --global "{{ .chezmoi.homeDir }}/.local/bin"
 fish_add_path --global "{{ .chezmoi.homeDir }}/.cargo/bin"
 fish_add_path --global "{{ .chezmoi.homeDir }}/.krew/bin"

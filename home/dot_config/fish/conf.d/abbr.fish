@@ -2,6 +2,8 @@ if type -q bat
     abbr cat bat
 end
 
+abbr c clear
+
 if type -q chezmoi
     abbr cm chezmoi
 end
