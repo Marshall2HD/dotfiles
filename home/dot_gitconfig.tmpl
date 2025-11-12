@@ -1,0 +1,37 @@
+[user]
+  name = Marshall
+  email = 15093189+Marshall2HD@users.noreply.github.com
+  {{- if (contains "termux" .chezmoi.homeDir) }}
+  signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICvXce0s/8Zca7kH4ZUq9zdEWhA8P3k00K26mtqwtAjb
+  {{- else }}
+  signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILCfSCjNvOyWqqMXulqE5QJ7g1vjQCI0Pj0bgy3x+p/H
+  {{- end }}
+[gpg]
+  format = ssh
+[format]
+  signOff = true
+[core]
+  autocrlf = input
+  editor = nano
+  excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
+[commit]
+  gpgsign = true
+[merge]
+  ff = only
+[pull]
+  rebase = true
+[status]
+  submoduleSummary = false
+[tag]
+  forceSignAnnotated = true
+[init]
+  defaultBranch = main
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+[url "ssh://git@github.com/"]
+  pushInsteadOf = https://github.com/
+[push]
+  autoSetupRemote = true
