@@ -26,7 +26,8 @@ font-size = 14
 clipboard-read = "allow"
 clipboard-write = "allow"
 
-macos-titlebar-style = hidden # "tabs" is cool too
+macos-titlebar-style = hidden
+# macos-titlebar-style = tabs # "tabs" is cool too
 window-decoration = false
 background-opacity = 0.80
 background-blur-radius = 0
