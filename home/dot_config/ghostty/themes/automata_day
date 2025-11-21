@@ -1,0 +1,27 @@
+# Neir Automata Light Theme
+background=EBE6D2
+foreground=2B2A2A
+#black
+palette= 0=#2B2A2A
+palette= 8=#402F27
+#red
+palette= 1=#662A37
+palette= 9=#992C34
+#green
+palette= 2=#244E33
+palette= 10=416647
+# yellow
+palette= 3=#B67F21
+palette= 11=#ADAD39
+# blue
+palette= 4=#3A4A67
+palette= 12=#5B89A7
+# purple
+palette= 5=#674C8B
+palette= 13=#954C5F
+# aqua
+palette= 6=#457A7A
+palette= 14=#328E8F
+# white
+palette= 7=#C0BCAC
+palette= 15=#EBE6D2
