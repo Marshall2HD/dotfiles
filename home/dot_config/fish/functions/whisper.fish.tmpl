@@ -1,0 +1,70 @@
+function whisper --description 'transcribe audio files using remote whisper server'
+    if test (count $argv) -gt 0
+        set -l task transcribe
+        set -l output text
+        set -l language auto
+        set -l audio_file ""
+
+        # Parse arguments
+        set -l i 1
+        while test $i -le (count $argv)
+            switch $argv[$i]
+                case -f --file
+                    set i (math $i + 1)
+                    set audio_file $argv[$i]
+                case -t --task
+                    set i (math $i + 1)
+                    set task $argv[$i]
+                case -o --output
+                    set i (math $i + 1)
+                    set output $argv[$i]
+                case -l --language
+                    set i (math $i + 1)
+                    set language $argv[$i]
+                case -h --help
+                    echo "Usage: whisper [options]"
+                    echo ""
+                    echo "Options:"
+                    echo "  -f, --file FILE       Audio file to transcribe (required)"
+                    echo "  -t, --task TASK       Task type: transcribe or translate (default: transcribe)"
+                    echo "  -o, --output FORMAT   Output format: text, json, srt, vtt (default: text)"
+                    echo "  -l, --language LANG   Language code (default: auto-detect)"
+                    echo "  -h, --help            Show this help message"
+                    echo ""
+                    echo "Example:"
+                    echo "  whisper -f audio.mp3"
+                    echo "  whisper -f audio.mp3 -t translate -o json"
+                    return 0
+                case '*'
+                    # Assume it's the audio file if no flag was provided
+                    if test -z "$audio_file"
+                        set audio_file $argv[$i]
+                    end
+            end
+            set i (math $i + 1)
+        end
+
+        # Check if audio file is provided
+        if test -z "$audio_file"
+            echo "Error: No audio file specified"
+            echo "Use 'whisper --help' for usage information"
+            return 1
+        end
+
+        # Check if file exists
+        if not test -f "$audio_file"
+            echo "Error: File not found: $audio_file"
+            return 1
+        end
+
+        # Build URL with parameters
+        set -l url "https://whisper.hades.casa/asr?task=$task&output=$output"
+        if test "$language" != "auto"
+            set url "$url&language=$language"
+        end
+
+        # Execute curl command
+        echo "Transcribing: $audio_file"
+        {{ lookPath "curl" }} -X POST -F "audio_file=@$audio_file" "$url"
+    end
+end
