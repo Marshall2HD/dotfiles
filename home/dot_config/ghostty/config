@@ -4,6 +4,7 @@ window-save-state = "always"
 
 ## NEIR AUTOMATA CONFIG modified
 shell-integration = "detect"
+shell-integration-features = ssh-terminfo,ssh-env
 
 macos-option-as-alt = true
 
@@ -15,13 +16,14 @@ keybind = ctrl+shift+left=goto_split:left
 keybind = ctrl+shift+right=goto_split:right
 keybind = ctrl+shift+up=goto_split:top
 keybind = ctrl+shift+down=goto_split:bottom
+#CLAUDE CODE KEYBIND
+keybind = shift+enter=text:\x1b\r
 
-font-family = "JetBrains Mono"
-font-family = "Iosevka Term Extended"
+# font-family = "JetBrains Mono"
+# font-family = "Iosevka Term Extended"
 font-family = "CommitMonoAutomata"
 font-family = "OperatorMonoLig Nerd Font"
 font-size = 14
-# font-thicken = false # Nier Config, Disabled for testing
 
 clipboard-read = "allow"
 clipboard-write = "allow"
@@ -29,8 +31,9 @@ clipboard-write = "allow"
 macos-titlebar-style = hidden
 # macos-titlebar-style = tabs # "tabs" is cool too
 window-decoration = false
-background-opacity = 0.80
-background-blur-radius = 0
+# Opacity is set per-theme (light only)
+# Blur originally set to 0
+background-blur-radius = 10
 unfocused-split-opacity = 0.95
 window-padding-x=2,2
 window-padding-y=2,2

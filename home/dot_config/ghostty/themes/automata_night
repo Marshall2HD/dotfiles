@@ -14,7 +14,7 @@ selection-foreground = #FAF4DE
 # ANSI Color Palette
 # Black
 palette = 0 = #1A1313
-palette = 8 = #30231E
+palette = 8 = #4D382F
 
 # Red
 palette = 1 = #B34750

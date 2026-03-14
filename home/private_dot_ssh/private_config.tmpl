@@ -1,4 +1,15 @@
+{{- if (eq .chezmoi.os "darwin") }}
+# OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+Include ~/.orbstack/ssh/config
+{{- end }}
+
 LogLevel ERROR
+
+Host thanatos.internal
+  User falke
+  IdentityFile ~/.ssh/thanatos.pub
+  IdentitiesOnly yes
 
 Host *
   AddKeysToAgent yes

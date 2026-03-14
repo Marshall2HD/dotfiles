@@ -1,3 +1,5 @@
---theme Dracula
+--theme=auto
+--theme-dark=automata_night
+--theme-light=automata_day
 --paging=never
 --style plain

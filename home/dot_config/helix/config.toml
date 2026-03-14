@@ -1,4 +1,6 @@
-theme = "automata_day"
+[theme]
+dark = "automata_night"
+light = "automata_day"
 
 [editor]
 mouse        = true

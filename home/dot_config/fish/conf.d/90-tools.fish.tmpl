@@ -1,0 +1,9 @@
+# OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# Antigravity
+fish_add_path {{ .chezmoi.homeDir }}/.antigravity/antigravity/bin
+
+# Bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
